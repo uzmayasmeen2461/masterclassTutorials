@@ -1,0 +1,32 @@
+import React from "react";
+
+const Content = () => {
+  const handleNameChange = () => {
+    const names = ["David", "Bob", "Gracy"];
+    const int = Math.floor(Math.random() * 3);
+    return names[int];
+  };
+
+  const handleClick = () => {
+    console.log("you clicked");
+  };
+  const handleClick2 = () => {
+    console.log("you clicked");
+  };
+
+  const handleClick3 = (e) => {
+    // console.log(e);
+    console.log(e.target.innerText);
+  };
+
+  return (
+    <main>
+      <p onDoubleClick={handleClick}>Hello {handleNameChange()}!</p>
+      <button onClick={handleClick}>Click me</button>
+      <button onClick={() => handleClick2()}>Click me two</button>
+      <button onClick={(e) => handleClick3(e)}>Click me three</button>
+    </main>
+  );
+};
+
+export default Content;
